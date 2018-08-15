@@ -19,7 +19,7 @@ public class App {
     //
 
     public static void main(String[] args) {
-        System.out.println("commond params: filepath  ip port");
+        System.out.println("commond params: filepath  devicename ip port");
 
         String filepath = "c:\\testmy.h264";
         if (args.length >= 1)
@@ -33,16 +33,22 @@ public class App {
             return;
         }
 
-        String strip = "127.0.0.1";
+        String strdeviceid = "123abcdef32153421";
         if (args.length >= 2)
         {
-            strip = args[1];
+            strdeviceid = args[1];
+        }
+
+        String strip = "127.0.0.1";
+        if (args.length >= 3)
+        {
+            strip = args[2];
         }
 
         short wport = 1985;
-        if (args.length >= 3)
+        if (args.length >= 4)
         {
-            int nport = Integer.parseInt(args[2]);
+            int nport = Integer.parseInt(args[3]);
             if (nport >= 65535 || nport < 1)
             {
                 System.out.println("port number is error");
@@ -56,6 +62,7 @@ public class App {
             Bootstrap b = new Bootstrap();
             b.group(eloop);
             final String strmypath = filepath;
+            final String strdev = strdeviceid;
             b.channel(NioSocketChannel.class)
                     .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
                     .handler(new ChannelInitializer<SocketChannel>() {
@@ -63,7 +70,7 @@ public class App {
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             socketChannel.pipeline().addLast(new LengthFieldPrepender(ByteOrder.LITTLE_ENDIAN,
                                     4, 0, false));
-                            socketChannel.pipeline().addLast(new ClientHandler(strmypath, "123abcdef32153421"));
+                            socketChannel.pipeline().addLast(new ClientHandler(strmypath, strdev));
                         }
                     });
 

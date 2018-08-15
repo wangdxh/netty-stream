@@ -1,6 +1,7 @@
 package com.wangdxh.streamhub;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class StreamHub {
@@ -27,5 +28,9 @@ public class StreamHub {
         for(StreamFrameSink key : map.keySet()){
             key.WriteFrame(frame);
         }
+    }
+    public static Set<String> GetStreams()
+    {
+        return sinkmap.keySet();
     }
 }

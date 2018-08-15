@@ -136,10 +136,26 @@ public class App {
                         }
                     });
 
+            ServerBootstrap httprest = b.clone();
+            httprest.childOption(ChannelOption.SO_RCVBUF, 64 * 1024)
+                    .childOption(ChannelOption.SO_SNDBUF, 64 * 1024)
+                    .childOption(ChannelOption.WRITE_BUFFER_WATER_MARK, new WriteBufferWaterMark(64 * 1024 / 2, 64 * 1024))
+                    .childHandler(new ChannelInitializer<SocketChannel>() {
+                        @Override
+                        protected void initChannel(SocketChannel socketChannel) throws Exception {
+                            socketChannel.pipeline()
+                                    .addLast(new HttpResponseEncoder())
+                                    .addLast(new HttpRequestDecoder())
+                                    .addLast(new HttpObjectAggregator(64 * 1024))
+                                    .addLast(new HttpRestHandler());
+                        }
+                    });
+
             ChannelFuture f = b.bind(1985).sync();
             httpstrap.bind(1984).sync();
             wsstrap.bind(1983).sync();
             rtspstrap.bind(554).sync();
+            httprest.bind(80).sync();
 
             System.out.println("Moriturus te saluto!!!");
 
