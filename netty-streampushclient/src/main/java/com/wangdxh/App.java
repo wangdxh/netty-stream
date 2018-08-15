@@ -1,6 +1,6 @@
 package com.wangdxh;
 
-import handler.ClientHandler;
+import com.wangdxh.handler.ClientHandler;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.bootstrap.Bootstrap;
@@ -9,8 +9,6 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LengthFieldPrepender;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.nio.ByteOrder;
 
 /**
@@ -21,16 +19,18 @@ public class App {
     //
 
     public static void main(String[] args) {
-        String filepath = "c:\\testokmy.h264";
+        System.out.println("commond params: filepath  ip port");
+
+        String filepath = "c:\\testmy.h264";
         if (args.length >= 1)
         {
             filepath = args[0];
-            File file = new File(filepath);
-            if (false == file.exists())
-            {
-                System.out.printf("file %s not exits\n", filepath);
-                return;
-            }
+        }
+        File file = new File(filepath);
+        if (false == file.exists())
+        {
+            System.out.printf("file %s not exits\n", filepath);
+            return;
         }
 
         String strip = "127.0.0.1";

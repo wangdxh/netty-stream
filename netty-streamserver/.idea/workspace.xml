@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b78837e1-abfd-451e-8bed-86fd8a0e4e96" name="Default" comment="" />
+    <list default="true" id="b78837e1-abfd-451e-8bed-86fd8a0e4e96" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../netty-streampushclient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../netty-streampushclient/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netty-streampushclient/src/main/java/com/wangdxh/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netty-streampushclient/src/main/java/com/wangdxh/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netty-streampushclient/src/main/java/handler/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netty-streampushclient/src/main/java/com/wangdxh/handler/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netty-streampushclient/src/main/java/handler/H264FrameInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netty-streampushclient/src/main/java/com/wangdxh/handler/H264FrameInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,9 +68,10 @@
     <session id="-1927194714">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -100,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wangdxh/handler/H264FrameToFlvByteBuf.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -108,7 +115,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/apache-maven-3.2.2/repository/io/netty/netty-all/4.1.25.Final/netty-all-4.1.25.Final-sources.jar!/io/netty/buffer/PooledSlicedByteBuf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1387">
+            <state relative-caret-position="1330">
               <caret line="109" selection-start-line="109" selection-end-line="109" />
             </state>
           </provider>
@@ -271,6 +278,15 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Profiles" type="6783ec58:MavenProjectsStructure$ProfilesNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="netty-streamserver" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="netty-streamserver" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
@@ -294,22 +310,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="AndroidView" />
       <pane id="PackagesPane">
         <subPane>
@@ -322,6 +322,52 @@
               <item name="nettyserver01" type="58d84e3e:PackageViewProjectNode" />
               <item name="nettyserver01" type="616d4139:PackageViewModuleNode" />
               <item name="com.wangdxh" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wangdxh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="netty-streamserver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="netty-streamserver" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wangdxh" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -439,9 +485,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49565217" visible="true" weight="0.24659607" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49565217" visible="true" weight="0.25037822" />
       <window_info id="Structure" order="1" sideWeight="0.50236964" side_tool="true" weight="0.2730711" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -794,7 +839,7 @@
     </entry>
     <entry file="jar://C:/apache-maven-3.2.2/repository/io/netty/netty-all/4.1.25.Final/netty-all-4.1.25.Final-sources.jar!/io/netty/buffer/PooledSlicedByteBuf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1387">
+        <state relative-caret-position="1330">
           <caret line="109" selection-start-line="109" selection-end-line="109" />
         </state>
       </provider>
@@ -844,7 +889,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wangdxh/handler/H264FrameToFlvByteBuf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
         </state>
       </provider>
     </entry>

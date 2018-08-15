@@ -1,9 +1,8 @@
-package handler;
+package com.wangdxh.handler;
 
 import io.netty.buffer.ByteBuf;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 class NalUnitBuf
 {
