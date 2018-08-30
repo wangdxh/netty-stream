@@ -5,6 +5,7 @@ a media server by netty framework
 
 h264 test file path
 https://github.com/wangdxh/Desert-Eagle/blob/master/streampushclient/testokmy.h264
+
 format is: 4byte-frame length(Little Endian) follow by h264 raw frame
 
 
@@ -36,3 +37,9 @@ http://127.0.0.1
 ```
 
 when u get the flv url,u can test it in :
+with chrome open http://106.15.184.203:8001/
+input the httpflv or the wsflv url in the Stream URL, then u can play the url.
+
+rtsp url can use vlc player to play.
+
+
