@@ -27,7 +27,7 @@ after server is running, there r 5 tcp ports is listening
 * 554  rtsp just udp transport
 * 80   list all the stream and the stream's url.
 
-http://127.0.0.1
+get http://127.0.0.1 to the detail url infor.
 ```
 {"123abcdef32153421": {
   "wsflv": "ws://127.0.0.1:1983/live/liveflv?deviceid=123abcdef32153421",
@@ -35,9 +35,12 @@ http://127.0.0.1
   "rtsp": "rtsp://127.0.0.1/live/livestream?deviceid=123abcdef32153421"
 }}
 ```
+### play test
 
 when u get the flv url,u can test it in :
+
 with chrome open http://106.15.184.203:8001/
+
 input the httpflv or the wsflv url in the Stream URL, then u can play the url.
 
 rtsp url can use vlc player to play.
