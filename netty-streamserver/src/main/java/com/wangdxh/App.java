@@ -1,6 +1,7 @@
 package com.wangdxh;
 
 import com.wangdxh.handler.*;
+import com.wangdxh.ssl.SSLContextFactory;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -19,8 +20,10 @@ import io.netty.handler.codec.http.cors.CorsHandler;
 import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.codec.rtsp.RtspDecoder;
 import io.netty.handler.codec.rtsp.RtspEncoder;
+import io.netty.handler.ssl.SslHandler;
 import io.netty.util.ResourceLeakDetector;
 
+import javax.net.ssl.SSLEngine;
 import java.nio.ByteOrder;
 
 /**
@@ -94,6 +97,7 @@ public class App {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             CorsConfig corsConfig = CorsConfigBuilder.forAnyOrigin().allowNullOrigin().allowCredentials().build();
+
                             socketChannel.pipeline()
                                     .addLast(new HttpResponseEncoder())
                                     .addLast(new HttpRequestDecoder())
@@ -103,6 +107,31 @@ public class App {
                                     .addLast(new HttpFlvHandler());
                         }
                     });
+
+            // when need open ssl
+            ServerBootstrap httpsslflvstrap = b.clone();
+            httpsslflvstrap.childHandler(new ChannelInitializer<SocketChannel>()
+            {
+                @Override
+                protected void initChannel(SocketChannel socketChannel) throws Exception
+                {
+                    CorsConfig corsConfig = CorsConfigBuilder.forAnyOrigin().allowNullOrigin().allowCredentials().build();
+
+                    SSLEngine sslEngine = SSLContextFactory.getSslContext().createSSLEngine();
+                    sslEngine.setUseClientMode(false);
+                    socketChannel.pipeline().addLast(new SslHandler(sslEngine));
+
+                    socketChannel.pipeline()
+                            .addLast(new HttpResponseEncoder())
+                            .addLast(new HttpRequestDecoder())
+                            .addLast(new HttpObjectAggregator(64 * 1024))
+                            .addLast(new CorsHandler(corsConfig))//.addLast(new ChunkedWriteHandler())
+                            .addLast(new H264FrameToFlvByteBuf())
+                            .addLast(new HttpFlvHandler());
+                }
+            });
+
+
 
             ServerBootstrap wsstrap = b.clone();
             wsstrap.childOption(ChannelOption.SO_RCVBUF, 64 * 1024)
@@ -154,6 +183,8 @@ public class App {
             ChannelFuture f = b.bind(1985).sync();
             httpstrap.bind(1984).sync();
             wsstrap.bind(1983).sync();
+            httpsslflvstrap.bind(1982).sync();
+
             rtspstrap.bind(554).sync();
             httprest.bind(80).sync();
 
